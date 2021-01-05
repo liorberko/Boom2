@@ -80,6 +80,30 @@ void AVLtree<T,M>::postOrder(AVLnode<T,M> *target, void (*doSomething)(AVLnode<T
     doSomething(target);
 }
 
+template<class T, class M>
+void fixRank(AVLnode<T,M> *vertex)
+{
+    if (vertex->right_son != NULL)
+    {
+        if (vertex->left_son != NULL)
+        {
+            vertex->rank=vertex->left_son->rank+vertex->right_son->rank+1;
+        }
+        else
+        {
+            vertex->rank = (vertex->right_son->rank + 1);
+        }
+        
+    }
+    else if (vertex->left_son != NULL)
+    {
+        vertex->rank = (vertex->left_son->rank + 1);
+    }
+    else
+    {
+        vertex->rank = 1;
+    }
+}
 
 /****************************************/
 /*     Method implementation section    */
@@ -88,7 +112,7 @@ void AVLtree<T,M>::postOrder(AVLnode<T,M> *target, void (*doSomething)(AVLnode<T
 
 template <class T, class M>
 bool AVLtree<T,M>::addVertex(T* info ,M key)  {
-    AVLnode<T, M>* new_ver = new AVLnode<T, M>(info, key);
+    AVLnode<T, M>* new_vertex = new AVLnode<T, M>(info, key);
     if(root==NULL){
         root= new_vertex;
     }
@@ -96,14 +120,14 @@ bool AVLtree<T,M>::addVertex(T* info ,M key)  {
     AVLnode<T,M> *parent; // so we have a grasp on parent vertex
     while(true)
     {
-        if(current_vertex->info == new_vertex->info){
-            current_vertex->rank+=1;
+        if(current_vertex->key == new_vertex->key){
+            // current_vertex->rank+=1;
             return true; // this vertex already exists.
         } 
         current_vertex->rank+=1;//every step increases distinguished vertex's rank by 1
         parent=current_vertex;
         bool procede_left;
-        if(current_vertex->info > new_vertex->info) procede_left = true;// if current node bigger then new node, we need to go left.
+        if(current_vertex->key > new_vertex->key) procede_left = true;// if current node bigger then new node, we need to go left.
         else procede_left = false;// else we need to go right
         current_vertex = procede_left ? current_vertex->left_son : current_vertex->right_son;
         //when adding a new vertex it must become a leaf at first
@@ -162,8 +186,8 @@ AVLnode<T,M>* AVLtree<T, M>::rotateLeftLeft(AVLnode<T,M> *vertex){
     b->height=setHeight(b);
     setBalance(vertex);
     setBalance(b);
-    vertex.rank=vertex->left_son.rank+vertex->right_son.rank+1;
-    b.rank=b->left_son->rank+vertex.rank+1;
+    fixRank(vertex);
+    fixRank(b);
     return b;
 }
 
@@ -192,11 +216,12 @@ AVLnode<T,M>* AVLtree<T,M>::rotateRightRight(AVLnode<T,M> *vertex){
     c->height=setHeight(c);
     setBalance(vertex);
     setBalance(c);
-    vertex.rank=vertex->left_son.rank+vertex->right_son.rank+1;
-    c.rank=vertex.rank+c->right_son.rank+1;
+    fixRank(vertex);
+    fixRank(c);
     return c;
     
 }
+
 template<class T, class M>
 AVLnode<T,M>* AVLtree<T,M>::rotateLeftRight(AVLnode<T,M> *vertex){
     vertex->left_son=rotateRightRight(vertex->left_son);
@@ -440,16 +465,18 @@ void AVLtree<T,M>::removeVertex(AVLnode<T,M> *ver_to_remove)
 
 template <class T, class M>
 void printVertex(AVLnode<T,M> *vertex) {
-    std::cout <<"info: ";
-    std::cout << vertex->info << std::endl;
+    std::cout <<"key: ";
+    std::cout << *(vertex->info) << std::endl;
     std::cout <<"hieght: ";
     std::cout <<vertex->height<< std::endl;
+    std::cout <<"rank: ";
+    std::cout <<vertex->rank<< std::endl;
     std::cout <<"balance: ";
     std::cout <<vertex->balance<< std::endl;
     std::cout <<"left son: ";
     if (vertex->left_son != nullptr) 
     {
-        std::cout <<vertex->left_son->info<< std::endl;
+        std::cout <<*(vertex->left_son->info)<< std::endl;
     }
     else 
     {
@@ -457,13 +484,13 @@ void printVertex(AVLnode<T,M> *vertex) {
     }
     std::cout <<"right son: ";
     if(vertex->right_son != nullptr){
-        std::cout <<vertex->right_son->info<< std::endl;
+        std::cout <<*(vertex->right_son->info)<< std::endl;
     }
     else std::cout<<"no right son" << std::endl;
     std::cout <<"parent: ";
     if (vertex->parent != nullptr)
     {
-        std::cout <<vertex->parent->info<< std::endl;
+        std::cout <<*(vertex->parent->info)<< std::endl;
     }
     else
     {

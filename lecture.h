@@ -8,7 +8,6 @@ class lecture
 {
     public:
     lectureKey key;
-    AVLtree<lecture,lectureKey>* papa;
     int& getLectureID();
     int& getCourseID();
     int& getViewTime();
@@ -18,16 +17,10 @@ class lecture
     bool operator==(const lecture target) const ;
     lecture& operator=(const lecture target) ;
     friend std::ostream& operator<<(std::ostream& out, const lecture target) ;
-    lecture()  : key(0,0,0) , papa(NULL) {}
-    lecture(int lectureID, int courseID, int viewTime = 0, AVLtree<lecture,lectureKey>* papa= NULL ) : key(lectureID, courseID, viewTime),  papa(papa){} 
-    lecture(const lecture& target) : key(target.key.lectureID, target.key.courseID, target.key.viewTime) ,papa(target.papa){}
+    lecture()  : key(0,0,0)  {}
+    lecture(int lectureID, int courseID, int viewTime = 0 ) : key(lectureID, courseID, viewTime){} 
+    lecture(const lecture& target) : key(target.key.lectureID, target.key.courseID, target.key.viewTime) {}
     ~lecture() = default;
-    // {
-    //     // if (papa != NULL)
-    //     // {
-    //     //     papa->removeVertex(papa->find(key));
-    //     // }
-    // }
 };
 
 

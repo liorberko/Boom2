@@ -874,12 +874,12 @@ CMakeFiles/ContinuousCoverage.dir/clean:
 CMakeFiles/Boom2.dir/all:
 	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/depend
 	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Lior\Desktop\technion\data_stract\Boom2\build\CMakeFiles --progress-num=1,2 "Built target Boom2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Lior\Desktop\technion\data_stract\Boom2\build\CMakeFiles --progress-num=1,2,3,4,5 "Built target Boom2"
 .PHONY : CMakeFiles/Boom2.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Boom2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Lior\Desktop\technion\data_stract\Boom2\build\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Lior\Desktop\technion\data_stract\Boom2\build\CMakeFiles 5
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/Boom2.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Lior\Desktop\technion\data_stract\Boom2\build\CMakeFiles 0
 .PHONY : CMakeFiles/Boom2.dir/rule

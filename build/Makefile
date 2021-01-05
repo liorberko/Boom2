@@ -536,6 +536,87 @@ Boom2/fast:
 	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/build
 .PHONY : Boom2/fast
 
+course.obj: course.cpp.obj
+
+.PHONY : course.obj
+
+# target to build an object file
+course.cpp.obj:
+	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/course.cpp.obj
+.PHONY : course.cpp.obj
+
+course.i: course.cpp.i
+
+.PHONY : course.i
+
+# target to preprocess a source file
+course.cpp.i:
+	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/course.cpp.i
+.PHONY : course.cpp.i
+
+course.s: course.cpp.s
+
+.PHONY : course.s
+
+# target to generate assembly for a file
+course.cpp.s:
+	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/course.cpp.s
+.PHONY : course.cpp.s
+
+lecture.obj: lecture.cpp.obj
+
+.PHONY : lecture.obj
+
+# target to build an object file
+lecture.cpp.obj:
+	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/lecture.cpp.obj
+.PHONY : lecture.cpp.obj
+
+lecture.i: lecture.cpp.i
+
+.PHONY : lecture.i
+
+# target to preprocess a source file
+lecture.cpp.i:
+	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/lecture.cpp.i
+.PHONY : lecture.cpp.i
+
+lecture.s: lecture.cpp.s
+
+.PHONY : lecture.s
+
+# target to generate assembly for a file
+lecture.cpp.s:
+	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/lecture.cpp.s
+.PHONY : lecture.cpp.s
+
+lectureKey.obj: lectureKey.cpp.obj
+
+.PHONY : lectureKey.obj
+
+# target to build an object file
+lectureKey.cpp.obj:
+	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/lectureKey.cpp.obj
+.PHONY : lectureKey.cpp.obj
+
+lectureKey.i: lectureKey.cpp.i
+
+.PHONY : lectureKey.i
+
+# target to preprocess a source file
+lectureKey.cpp.i:
+	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/lectureKey.cpp.i
+.PHONY : lectureKey.cpp.i
+
+lectureKey.s: lectureKey.cpp.s
+
+.PHONY : lectureKey.s
+
+# target to generate assembly for a file
+lectureKey.cpp.s:
+	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/lectureKey.cpp.s
+.PHONY : lectureKey.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -603,6 +684,15 @@ help:
 	@echo ... NightlyTest
 	@echo ... NightlyUpdate
 	@echo ... Boom2
+	@echo ... course.obj
+	@echo ... course.i
+	@echo ... course.s
+	@echo ... lecture.obj
+	@echo ... lecture.i
+	@echo ... lecture.s
+	@echo ... lectureKey.obj
+	@echo ... lectureKey.i
+	@echo ... lectureKey.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

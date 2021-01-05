@@ -43,3 +43,13 @@ bool lectureKey::operator>(const lectureKey& target) const
     }
     return true;
 }
+
+
+bool lectureKey::operator==(const lectureKey& target) const
+{
+    if ((lectureID == target.lectureID) && (courseID == target.courseID) && (viewTime == target.viewTime))
+    {
+        return true;
+    }
+    return false;
+}
