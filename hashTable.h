@@ -46,9 +46,8 @@ public:
     hashTable(hashTable& target) : 
     original_size(target.original_size),num_of_elements(target.num_of_elements), hash_array(new hash_element<T>[target.original_size])
     {
-        hash_element<T>* new_hash_array= new hash_element<T>[target.original_size];
         for(int i=0; i<original_size;i++){
-            new_hash_array[i]=target.hash_array[i];
+            hash_array[i]=target.hash_array[i];
         }
     };
     void insert(T* hash_node, int key);
@@ -74,7 +73,13 @@ hashTable<T>::~hashTable()
 }
 
 template <class T>
-hashTable<T>::hashTable() : original_size(INITIAL_SIZE), num_of_elements(0), hash_array(new hash_element<T>*[INITIAL_SIZE]) {}
+hashTable<T>::hashTable() : original_size(INITIAL_SIZE), num_of_elements(0), hash_array(new hash_element<T>*[INITIAL_SIZE]) 
+{
+    for (int i = 0; i < original_size; i++)
+    {
+        hash_array[i] = NULL;
+    }
+}
 
 template <class T>
 int hashTable<T>::hash_function(int key)
@@ -101,6 +106,9 @@ void hashTable<T>::expand(){
     hash_element<T>** hash_new_array = new hash_element<T>*[EXPAND_RATE*original_size];
     int previous_original_size = original_size;//next line we are updating to new size parameters
     original_size=EXPAND_RATE*original_size;//updating parameter m
+    for (int i=0; i<original_size;i++){
+        hash_new_array[i]=NULL;
+    }
     for(int i=0;i<previous_original_size;i++){
         if(this->hash_array[i]!=NULL){
             hash_element<T>* current=hash_array[i];
@@ -122,6 +130,9 @@ void hashTable<T>::reduce()
     hash_element<T>** hash_new_array = new hash_element<T>** ((this.original_size)/REDUCE_RATE);
     int previous_original_size = this.original_size;//next line we are updating to new size parameters
     original_size= (this.original_size)/REDUCE_RATE;//updating parameter m
+    for (int i=0; i<original_size;i++){
+        hash_new_array[i]=NULL;
+    }
     for(int i=0;i<previous_original_size;i++){
         if(this->hash_array[i]!=NULL){
             hash_element<T>* current=hash_array[i];

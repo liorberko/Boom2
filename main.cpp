@@ -9,7 +9,6 @@
 
 int main()
 {
-    
     lecture* lecture1 = new lecture(0,1,0);
     lecture* lecture2 = new lecture(1,1,3);
     lecture* lecture3 = new lecture(2,1,0);
