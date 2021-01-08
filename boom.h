@@ -3,6 +3,7 @@
 #include "lecture.h"
 #include "AVLnode.h"
 #include "AVLtree.h"
+#include "exceptions.h"
 #include "course.h"
 #include "hashTable.h"
 
@@ -17,13 +18,13 @@ public:
 
     ~boom();
 
-    bool AddCourse(int courseID);
+    void AddCourse(int courseID);
 
     void RemoveCourse(int courseID);
 
     int AddClass(int courseID);
 
-    bool WatchClass(int courseID, int classID, int time);
+    void WatchClass(int courseID, int classID, int time);
 
     lecture* GetIthWatchedClass(int i);
 

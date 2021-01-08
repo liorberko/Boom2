@@ -48,7 +48,8 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				5
 			]
 		}
 	],
@@ -89,7 +90,8 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				5
 			]
 		}
 	],
@@ -98,7 +100,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "main.cpp",
+			"path" : "hashTest.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -123,6 +125,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "boom.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "library2.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

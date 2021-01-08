@@ -5,9 +5,9 @@
 #include <iostream>
 #include <cmath>
 #define A (sqrt((5)-1)/2)
-#define EXPAND_RATE 10
+#define EXPAND_RATE 2
 #define INITIAL_SIZE 15
-#define REDUCE_RATE 10 // to divide by
+#define REDUCE_RATE 2 // to divide by
 
 
 template <class T>
@@ -20,6 +20,7 @@ struct hash_element
     hash_element() :key(0), data(NULL), next(NULL){}
     hash_element(int key, T* data) : key(key) ,data(data), next(nullptr){}
     hash_element(const hash_element& target ) : key(target.key), data(target.data), next(target.next) {}
+    void print_hash_element();
     hash_element& operator=(const hash_element &target)
     {
     if(this == &target) return *this;
@@ -30,6 +31,13 @@ struct hash_element
     }
     ~hash_element() = default;
 };
+
+template <class T>
+void hash_element<T>::print_hash_element() 
+{
+std::cout<< key <<std::endl;
+// std::cout<< static_cast<std::string>(*data) <<std::endl;
+}
 
 template <class T>
 class hashTable
@@ -56,6 +64,7 @@ public:
     int getSize();
     hash_element<T>* operator[](int i);
     ~hashTable();
+    void print_hash();
 };
 
 template <class T>
@@ -129,9 +138,9 @@ void hashTable<T>::expand(){
 template <class T>
 void hashTable<T>::reduce()
 {
-    hash_element<T>** hash_new_array = new hash_element<T>** ((this.original_size)/REDUCE_RATE);
-    int previous_original_size = this.original_size;//next line we are updating to new size parameters
-    original_size= (this.original_size)/REDUCE_RATE;//updating parameter m
+    hash_element<T>** hash_new_array = new hash_element<T>* [(this->original_size)/REDUCE_RATE];
+    int previous_original_size = this->original_size;//next line we are updating to new size parameters
+    original_size= (this->original_size)/REDUCE_RATE;//updating parameter m
     for (int i=0; i<original_size;i++){
         hash_new_array[i]=NULL;
     }
@@ -218,6 +227,24 @@ template <class T>
 hash_element<T>* hashTable<T>::operator[](int i)
 {
     return hash_array[i];
+}
+
+template <class T>
+void hashTable<T>::print_hash(){
+    std::cout<<"printing hash: "<<std::endl;
+    std::cout<<"hash size is: "<<std::endl;
+    std::cout<<original_size<<std::endl;
+    std::cout<<"number of elements inserted is: "<<std::endl;
+    std::cout<<num_of_elements<<std::endl;
+    std::cout<<"printing elements"<<std::endl;
+    for(int i=0; i<original_size; i++){
+        std::cout<<"the " << i << " element is:"<<std::endl;
+        hash_element<T>* current=hash_array[i];
+        while(current!=NULL){
+            current->print_hash_element();
+            current=current->next;      
+        }
+    }
 }
 
 #endif /* HASHTABLE */

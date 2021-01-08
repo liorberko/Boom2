@@ -4,7 +4,7 @@ project(Boom2 VERSION 0.1.0)
 include(CTest)
 enable_testing()
 
-add_executable(Boom2 main.cpp lecture.cpp lectureKey.cpp course.cpp boom.cpp)
+add_executable(Boom2 hashTest.cpp lecture.cpp lectureKey.cpp course.cpp boom.cpp library2.cpp)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

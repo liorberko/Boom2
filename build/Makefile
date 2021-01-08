@@ -590,6 +590,33 @@ course.cpp.s:
 	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/course.cpp.s
 .PHONY : course.cpp.s
 
+hashTest.obj: hashTest.cpp.obj
+
+.PHONY : hashTest.obj
+
+# target to build an object file
+hashTest.cpp.obj:
+	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/hashTest.cpp.obj
+.PHONY : hashTest.cpp.obj
+
+hashTest.i: hashTest.cpp.i
+
+.PHONY : hashTest.i
+
+# target to preprocess a source file
+hashTest.cpp.i:
+	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/hashTest.cpp.i
+.PHONY : hashTest.cpp.i
+
+hashTest.s: hashTest.cpp.s
+
+.PHONY : hashTest.s
+
+# target to generate assembly for a file
+hashTest.cpp.s:
+	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/hashTest.cpp.s
+.PHONY : hashTest.cpp.s
+
 lecture.obj: lecture.cpp.obj
 
 .PHONY : lecture.obj
@@ -644,32 +671,32 @@ lectureKey.cpp.s:
 	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/lectureKey.cpp.s
 .PHONY : lectureKey.cpp.s
 
-main.obj: main.cpp.obj
+library2.obj: library2.cpp.obj
 
-.PHONY : main.obj
+.PHONY : library2.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+library2.cpp.obj:
+	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/library2.cpp.obj
+.PHONY : library2.cpp.obj
 
-main.i: main.cpp.i
+library2.i: library2.cpp.i
 
-.PHONY : main.i
+.PHONY : library2.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/main.cpp.i
-.PHONY : main.cpp.i
+library2.cpp.i:
+	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/library2.cpp.i
+.PHONY : library2.cpp.i
 
-main.s: main.cpp.s
+library2.s: library2.cpp.s
 
-.PHONY : main.s
+.PHONY : library2.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/main.cpp.s
-.PHONY : main.cpp.s
+library2.cpp.s:
+	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/library2.cpp.s
+.PHONY : library2.cpp.s
 
 # Help Target
 help:
@@ -717,15 +744,18 @@ help:
 	@echo ... course.obj
 	@echo ... course.i
 	@echo ... course.s
+	@echo ... hashTest.obj
+	@echo ... hashTest.i
+	@echo ... hashTest.s
 	@echo ... lecture.obj
 	@echo ... lecture.i
 	@echo ... lecture.s
 	@echo ... lectureKey.obj
 	@echo ... lectureKey.i
 	@echo ... lectureKey.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... library2.obj
+	@echo ... library2.i
+	@echo ... library2.s
 .PHONY : help
 
 

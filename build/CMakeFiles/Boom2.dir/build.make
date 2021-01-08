@@ -73,18 +73,18 @@ include CMakeFiles/Boom2.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Boom2.dir/flags.make
 
-CMakeFiles/Boom2.dir/main.cpp.obj: CMakeFiles/Boom2.dir/flags.make
-CMakeFiles/Boom2.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Lior\Desktop\technion\data_stract\Boom2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Boom2.dir/main.cpp.obj"
-	C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Boom2.dir\main.cpp.obj -c C:\Users\Lior\Desktop\technion\data_stract\Boom2\main.cpp
+CMakeFiles/Boom2.dir/hashTest.cpp.obj: CMakeFiles/Boom2.dir/flags.make
+CMakeFiles/Boom2.dir/hashTest.cpp.obj: ../hashTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Lior\Desktop\technion\data_stract\Boom2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Boom2.dir/hashTest.cpp.obj"
+	C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Boom2.dir\hashTest.cpp.obj -c C:\Users\Lior\Desktop\technion\data_stract\Boom2\hashTest.cpp
 
-CMakeFiles/Boom2.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Boom2.dir/main.cpp.i"
-	C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Lior\Desktop\technion\data_stract\Boom2\main.cpp > CMakeFiles\Boom2.dir\main.cpp.i
+CMakeFiles/Boom2.dir/hashTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Boom2.dir/hashTest.cpp.i"
+	C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Lior\Desktop\technion\data_stract\Boom2\hashTest.cpp > CMakeFiles\Boom2.dir\hashTest.cpp.i
 
-CMakeFiles/Boom2.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Boom2.dir/main.cpp.s"
-	C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Lior\Desktop\technion\data_stract\Boom2\main.cpp -o CMakeFiles\Boom2.dir\main.cpp.s
+CMakeFiles/Boom2.dir/hashTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Boom2.dir/hashTest.cpp.s"
+	C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Lior\Desktop\technion\data_stract\Boom2\hashTest.cpp -o CMakeFiles\Boom2.dir\hashTest.cpp.s
 
 CMakeFiles/Boom2.dir/lecture.cpp.obj: CMakeFiles/Boom2.dir/flags.make
 CMakeFiles/Boom2.dir/lecture.cpp.obj: ../lecture.cpp
@@ -138,27 +138,42 @@ CMakeFiles/Boom2.dir/boom.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Boom2.dir/boom.cpp.s"
 	C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Lior\Desktop\technion\data_stract\Boom2\boom.cpp -o CMakeFiles\Boom2.dir\boom.cpp.s
 
+CMakeFiles/Boom2.dir/library2.cpp.obj: CMakeFiles/Boom2.dir/flags.make
+CMakeFiles/Boom2.dir/library2.cpp.obj: ../library2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Lior\Desktop\technion\data_stract\Boom2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Boom2.dir/library2.cpp.obj"
+	C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Boom2.dir\library2.cpp.obj -c C:\Users\Lior\Desktop\technion\data_stract\Boom2\library2.cpp
+
+CMakeFiles/Boom2.dir/library2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Boom2.dir/library2.cpp.i"
+	C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Lior\Desktop\technion\data_stract\Boom2\library2.cpp > CMakeFiles\Boom2.dir\library2.cpp.i
+
+CMakeFiles/Boom2.dir/library2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Boom2.dir/library2.cpp.s"
+	C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Lior\Desktop\technion\data_stract\Boom2\library2.cpp -o CMakeFiles\Boom2.dir\library2.cpp.s
+
 # Object files for target Boom2
 Boom2_OBJECTS = \
-"CMakeFiles/Boom2.dir/main.cpp.obj" \
+"CMakeFiles/Boom2.dir/hashTest.cpp.obj" \
 "CMakeFiles/Boom2.dir/lecture.cpp.obj" \
 "CMakeFiles/Boom2.dir/lectureKey.cpp.obj" \
 "CMakeFiles/Boom2.dir/course.cpp.obj" \
-"CMakeFiles/Boom2.dir/boom.cpp.obj"
+"CMakeFiles/Boom2.dir/boom.cpp.obj" \
+"CMakeFiles/Boom2.dir/library2.cpp.obj"
 
 # External object files for target Boom2
 Boom2_EXTERNAL_OBJECTS =
 
-Boom2.exe: CMakeFiles/Boom2.dir/main.cpp.obj
+Boom2.exe: CMakeFiles/Boom2.dir/hashTest.cpp.obj
 Boom2.exe: CMakeFiles/Boom2.dir/lecture.cpp.obj
 Boom2.exe: CMakeFiles/Boom2.dir/lectureKey.cpp.obj
 Boom2.exe: CMakeFiles/Boom2.dir/course.cpp.obj
 Boom2.exe: CMakeFiles/Boom2.dir/boom.cpp.obj
+Boom2.exe: CMakeFiles/Boom2.dir/library2.cpp.obj
 Boom2.exe: CMakeFiles/Boom2.dir/build.make
 Boom2.exe: CMakeFiles/Boom2.dir/linklibs.rsp
 Boom2.exe: CMakeFiles/Boom2.dir/objects1.rsp
 Boom2.exe: CMakeFiles/Boom2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Lior\Desktop\technion\data_stract\Boom2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Boom2.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Lior\Desktop\technion\data_stract\Boom2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Boom2.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Boom2.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

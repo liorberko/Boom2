@@ -11,16 +11,16 @@ boom::~boom(){
     }
 }
 
-bool boom::AddCourse(int courseID){
-    if(hash_courses.find(courseID)) return false; // course already exists// failure by definition
+void boom::AddCourse(int courseID){
+    if(hash_courses.find(courseID)) throw(Failure()); // course already exists// failure by definition
     course* new_course = new course(courseID);  
     hash_courses.insert(new_course, courseID);
-    return true;
 }
 
 void boom::RemoveCourse(int courseID)
 {
     course* to_remove = hash_courses.find(courseID);
+    if (to_remove == NULL) throw (Failure());
     for (int i=0 ; i< to_remove->getNumOfLectures(); i++)
     {
         AVLnode<lecture,lectureKey>* lecture_to_remove = avl_lectures.find(((to_remove->getLectures())->find(i))->getKey());
@@ -31,23 +31,23 @@ void boom::RemoveCourse(int courseID)
 }
 
 int boom::AddClass(int courseID){
-    if(!hash_courses.find(courseID)) return -1; // course does not exist.
+    if(!hash_courses.find(courseID)) throw( Failure()); // course does not exist.
     course* course=hash_courses.find(courseID);
     int lectureID = course->addLecture();
     return lectureID;
 }
 
-bool boom::WatchClass(int courseID, int classID, int time)
+void boom::WatchClass(int courseID, int classID, int time)
 {
     course* the_course = hash_courses.find(courseID);
     if (the_course == NULL)
     {
-        return false;
+        throw Failure();
     }
     lecture* the_lec = ((the_course->getLectures())->find(classID));
     if (the_lec == NULL)
     {
-        return false;
+        throw Invalid_input();
     }
     if (the_lec->getViewTime() == 0)
     {
@@ -60,7 +60,6 @@ bool boom::WatchClass(int courseID, int classID, int time)
         avl_lectures.removeVertex(avl_lectures.find(the_lec->key));
         avl_lectures.addVertex(the_lec,the_lec->key);
     }
-    return true;
 }
 
 lecture* boom::GetIthWatchedClass(int i)
@@ -68,14 +67,15 @@ lecture* boom::GetIthWatchedClass(int i)
     AVLnode<lecture,lectureKey>* lec = avl_lectures.findTheIRanke(i);
     if (lec == NULL)
     {
-        return NULL;
+        throw Failure();
     }
     return lec->info;
 }
 
 int boom::TimeViewed(int courseID, int classID){
-    if(!hash_courses.find(courseID)) return false; // course does not exists// failure by definition
+    if(!hash_courses.find(courseID)) throw(Failure()); // course does not exists// failure by definition
     course* course=hash_courses.find(courseID);
+    if((classID+1) > course->getNumOfLectures()) throw(Invalid_input());
     hashTable<lecture>* course_lectures_hash = course->getLectures();
     lecture* lecture = course_lectures_hash->find(classID);
     return lecture->getViewTime();
