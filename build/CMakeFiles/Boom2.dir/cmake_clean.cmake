@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "Boom2.exe"
   "Boom2.exe.manifest"
   "Boom2.pdb"
+  "CMakeFiles/Boom2.dir/boom.cpp.obj"
   "CMakeFiles/Boom2.dir/course.cpp.obj"
   "CMakeFiles/Boom2.dir/lecture.cpp.obj"
   "CMakeFiles/Boom2.dir/lectureKey.cpp.obj"

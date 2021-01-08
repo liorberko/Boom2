@@ -53,6 +53,8 @@ public:
     void insert(T* hash_node, int key);
     T* find(int key);
     void removeElement(int key);
+    int getSize();
+    hash_element<T>* operator[](int i);
     ~hashTable();
 };
 
@@ -205,6 +207,17 @@ void hashTable<T>::removeElement(int key)
     {
         reduce();
     }
+}
+
+template <class T>
+int hashTable<T>::getSize(){
+    return original_size;
+}
+
+template <class T>
+hash_element<T>* hashTable<T>::operator[](int i)
+{
+    return hash_array[i];
 }
 
 #endif /* HASHTABLE */

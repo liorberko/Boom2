@@ -1,7 +1,14 @@
 #include "boom.h"
 
 boom::~boom(){
-    
+    for(int i=0; i<hash_courses.getSize(); i++){
+        hash_element<course>* current = hash_courses[i];
+        while (current!= nullptr)
+        {
+            delete current->data;
+            current=current->next;
+        }
+    }
 }
 
 bool boom::AddCourse(int courseID){
@@ -37,7 +44,7 @@ bool boom::WatchClass(int courseID, int classID, int time)
     {
         return false;
     }
-    lecture* the_lec = ((the_course->getLectures()).find(courseID));
+    lecture* the_lec = ((the_course->getLectures())->find(classID));
     if (the_lec == NULL)
     {
         return false;
@@ -45,15 +52,31 @@ bool boom::WatchClass(int courseID, int classID, int time)
     if (the_lec->getViewTime() == 0)
     {
         the_lec->getViewTime() = time;
-        avl_lectures.
+        avl_lectures.addVertex(the_lec,the_lec->key);
     }
-    
+    else
+    {
+        the_lec->getViewTime() += time;
+        avl_lectures.removeVertex(avl_lectures.find(the_lec->key));
+        avl_lectures.addVertex(the_lec,the_lec->key);
+    }
+    return true;
 }
 
-lecture* boom::GetIthWatchedClass(int i);
+lecture* boom::GetIthWatchedClass(int i)
+{
+    AVLnode<lecture,lectureKey>* lec = avl_lectures.findTheIRanke(i);
+    if (lec == NULL)
+    {
+        return NULL;
+    }
+    return lec->info;
+}
 
 int boom::TimeViewed(int courseID, int classID){
     if(!hash_courses.find(courseID)) return false; // course does not exists// failure by definition
     course* course=hash_courses.find(courseID);
-    hashTable<lecture>* course_lecturs_has = course->getLectures();
+    hashTable<lecture>* course_lectures_hash = course->getLectures();
+    lecture* lecture = course_lectures_hash->find(classID);
+    return lecture->getViewTime();
 }

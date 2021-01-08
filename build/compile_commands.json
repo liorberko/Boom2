@@ -18,5 +18,10 @@
   "directory": "C:/Users/Lior/Desktop/technion/data_stract/Boom2/build",
   "command": "C:\\TDM-GCC-64\\bin\\x86_64-w64-mingw32-g++.exe    -g   -o CMakeFiles\\Boom2.dir\\course.cpp.obj -c C:\\Users\\Lior\\Desktop\\technion\\data_stract\\Boom2\\course.cpp",
   "file": "C:/Users/Lior/Desktop/technion/data_stract/Boom2/course.cpp"
+},
+{
+  "directory": "C:/Users/Lior/Desktop/technion/data_stract/Boom2/build",
+  "command": "C:\\TDM-GCC-64\\bin\\x86_64-w64-mingw32-g++.exe    -g   -o CMakeFiles\\Boom2.dir\\boom.cpp.obj -c C:\\Users\\Lior\\Desktop\\technion\\data_stract\\Boom2\\boom.cpp",
+  "file": "C:/Users/Lior/Desktop/technion/data_stract/Boom2/boom.cpp"
 }
 ]

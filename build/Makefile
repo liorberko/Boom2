@@ -536,6 +536,33 @@ Boom2/fast:
 	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/build
 .PHONY : Boom2/fast
 
+boom.obj: boom.cpp.obj
+
+.PHONY : boom.obj
+
+# target to build an object file
+boom.cpp.obj:
+	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/boom.cpp.obj
+.PHONY : boom.cpp.obj
+
+boom.i: boom.cpp.i
+
+.PHONY : boom.i
+
+# target to preprocess a source file
+boom.cpp.i:
+	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/boom.cpp.i
+.PHONY : boom.cpp.i
+
+boom.s: boom.cpp.s
+
+.PHONY : boom.s
+
+# target to generate assembly for a file
+boom.cpp.s:
+	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/boom.cpp.s
+.PHONY : boom.cpp.s
+
 course.obj: course.cpp.obj
 
 .PHONY : course.obj
@@ -684,6 +711,9 @@ help:
 	@echo ... NightlyTest
 	@echo ... NightlyUpdate
 	@echo ... Boom2
+	@echo ... boom.obj
+	@echo ... boom.i
+	@echo ... boom.s
 	@echo ... course.obj
 	@echo ... course.i
 	@echo ... course.s
