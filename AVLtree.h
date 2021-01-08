@@ -28,6 +28,7 @@ class AVLtree
     void printTree();
     void inOrder(AVLnode<T,M> *target, void (*doSomething)(AVLnode<T,M> *item));
     void postOrder(AVLnode<T,M> *target, void (*doSomething)(AVLnode<T,M> *item));
+    AVLnode<T,M>* findTheIRanke(int i);
 };
 /**************************************/
 /*     C'tors and D'tors section      */
@@ -78,6 +79,46 @@ void AVLtree<T,M>::postOrder(AVLnode<T,M> *target, void (*doSomething)(AVLnode<T
     postOrder(target->left_son, doSomething);
     postOrder(target->right_son ,doSomething);
     doSomething(target);
+}
+
+template<class T, class M>
+AVLnode<T,M>* AVLtree<T,M>::findTheIRanke(int i)
+{
+    AVLnode<T,M>* temp = root;
+    while ((i > 0) && (temp != nullptr))
+    {
+        if (temp->left_son != nullptr)
+        {
+            if (temp->left_son->rank == (i-1))
+            {
+                return temp;
+            }
+            if (temp->left_son->rank > (i-1))
+            {
+                temp = temp->left_son;
+                continue;
+            }
+            else
+            {
+                i -= (temp->left_son->rank +1);
+                temp = temp->right_son;
+                continue;
+            }
+        }
+        else 
+        {
+            if (temp->rank == i)
+            {
+                return temp;
+            }
+            else
+            {
+                temp = temp->right_son;
+                i--;
+            }
+        }
+    }
+    return NULL;
 }
 
 template<class T, class M>
@@ -306,9 +347,11 @@ void AVLtree<T,M>::printBalance() {
 template <class T, class M>
 void AVLtree<T,M>::fix_rank_after_remove(AVLnode<T,M> *ver_to_remove)
 {
-    while (ver_to_remove->parent =! nullptr)
+    AVLnode<T,M> *temp = ver_to_remove;
+    while (temp->parent != nullptr)
     {
-        ver_to_remove->parent->rank--;
+        (temp->parent->rank)--;
+        temp = temp->parent;
     }
 }
 
@@ -323,10 +366,10 @@ void AVLtree<T,M>::removeVertex(AVLnode<T,M> *ver_to_remove)
         delete(ver_to_remove);
         return; 
     }
-    fix_rank_after_remove(ver_to_remove);
     AVLnode<T,M> *to_fix;
     if ((ver_to_remove->right_son == nullptr) &&(ver_to_remove->left_son == nullptr))
     {
+        fix_rank_after_remove(ver_to_remove);
         if (ver_to_remove->parent != nullptr)
         {
             if(ver_to_remove->parent->right_son == ver_to_remove)
@@ -346,6 +389,7 @@ void AVLtree<T,M>::removeVertex(AVLnode<T,M> *ver_to_remove)
     }
     else if ((ver_to_remove->right_son == nullptr)  && !(ver_to_remove->left_son == nullptr))
     {
+        fix_rank_after_remove(ver_to_remove);
         if (ver_to_remove->parent != nullptr)
         {
             if(ver_to_remove->parent->right_son == ver_to_remove)
@@ -366,6 +410,7 @@ void AVLtree<T,M>::removeVertex(AVLnode<T,M> *ver_to_remove)
     }
     else if (!(ver_to_remove->right_son == nullptr)  && (ver_to_remove->left_son == nullptr))
     {
+        fix_rank_after_remove(ver_to_remove);
         if (ver_to_remove->parent != nullptr)
         {
             if(ver_to_remove->parent->right_son == ver_to_remove)
@@ -395,6 +440,8 @@ void AVLtree<T,M>::removeVertex(AVLnode<T,M> *ver_to_remove)
             temp1 = temp2;
             temp2 = temp2->left_son;
         }
+        fix_rank_after_remove(temp1);
+        temp1->rank = ver_to_remove->rank;
         if(temp1->parent->right_son == temp1)
         {
             temp1->parent->right_son = temp3;
@@ -466,7 +513,7 @@ void AVLtree<T,M>::removeVertex(AVLnode<T,M> *ver_to_remove)
 template <class T, class M>
 void printVertex(AVLnode<T,M> *vertex) {
     std::cout <<"key: ";
-    std::cout << *(vertex->info) << std::endl;
+    std::cout << *(vertex->info);
     std::cout <<"hieght: ";
     std::cout <<vertex->height<< std::endl;
     std::cout <<"rank: ";
