@@ -95,8 +95,8 @@ int hashTable<T>::hash_function(int key)
 {
     int hashed=0;
     // hashed = key%original_size;
-    double frac = original_size*((A*key)%1)
-    // hashed=(original_size*((A*key)%1));
+    double frac = (A*(double)key) - (int)(A*(double)key);
+    hashed = (int)(original_size*frac);
     return hashed;
 }
 
