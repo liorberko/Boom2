@@ -1,7 +1,7 @@
 #ifndef COURSE_H
 #define COURSE_H
-#include "lecture.h"
 #include "hashTable.h"
+#include "lecture.h"
 
 class course 
 {

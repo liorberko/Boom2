@@ -1,12 +1,10 @@
 #ifndef HASHTABLE
 #define HASHTABLE
-#include "course.h"
-#include "lecture.h"
 #include <iostream>
 #include <cmath>
-#define A (sqrt((5)-1)/2)
+#define A ((sqrt(5)-1)/2)
 #define EXPAND_RATE 2
-#define INITIAL_SIZE 15
+#define INITIAL_SIZE 2
 #define REDUCE_RATE 2 // to divide by
 
 
@@ -96,7 +94,9 @@ template <class T>
 int hashTable<T>::hash_function(int key)
 {
     int hashed=0;
-    hashed=original_size*(static_cast<int>(A*key)%1);
+    // hashed = key%original_size;
+    double frac = original_size*((A*key)%1)
+    // hashed=(original_size*((A*key)%1));
     return hashed;
 }
 
@@ -106,7 +106,8 @@ void hashTable<T>::insert(T* hash_node, int key)
     hash_element<T>* new_hash_node = new hash_element<T>(key, hash_node);
     new_hash_node->next = hash_array[hash_function(key)];
     hash_array[hash_function(key)] = new_hash_node;
-    if (num_of_elements >= 10*original_size)
+    num_of_elements+=1;
+    if (num_of_elements >= EXPAND_RATE*original_size)
     {
         expand();
     }
@@ -212,6 +213,7 @@ void hashTable<T>::removeElement(int key)
             next_step=next_step->next;
         }
     }
+    num_of_elements-=1;
     if (num_of_elements <= (original_size/REDUCE_RATE))
     {
         reduce();
@@ -238,10 +240,13 @@ void hashTable<T>::print_hash(){
     std::cout<<num_of_elements<<std::endl;
     std::cout<<"printing elements"<<std::endl;
     for(int i=0; i<original_size; i++){
-        std::cout<<"the " << i << " element is:"<<std::endl;
+        std::cout<<"this is the " << i << " row"<<std::endl;
         hash_element<T>* current=hash_array[i];
         while(current!=NULL){
+            std::cout<<"this key in the same chain:"<<std::endl;
             current->print_hash_element();
+            int hashed_key = hash_function(current->key);
+            std::cout<<"my hashed key is: "<<hashed_key<<std::endl;
             current=current->next;      
         }
     }
