@@ -12,7 +12,6 @@ class boom
 private:
     hashTable<course> hash_courses;
     AVLtree<lecture, lectureKey> avl_lectures;
-    int class_counter;
 public:
     boom()=default;
 

@@ -3,9 +3,9 @@
 #include <iostream>
 #include <cmath>
 #define A ((sqrt(5)-1)/2)
-#define EXPAND_RATE 2
-#define INITIAL_SIZE 2
-#define REDUCE_RATE 2 // to divide by
+#define EXPAND_RATE 10
+#define INITIAL_SIZE 10
+#define REDUCE_RATE 10 // to divide by
 
 
 template <class T>

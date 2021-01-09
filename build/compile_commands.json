@@ -1,8 +1,8 @@
 [
 {
   "directory": "C:/Users/Lior/Desktop/technion/data_stract/Boom2/build",
-  "command": "C:\\TDM-GCC-64\\bin\\x86_64-w64-mingw32-g++.exe    -g   -o CMakeFiles\\Boom2.dir\\TimeCheck.cpp.obj -c C:\\Users\\Lior\\Desktop\\technion\\data_stract\\Boom2\\TimeCheck.cpp",
-  "file": "C:/Users/Lior/Desktop/technion/data_stract/Boom2/TimeCheck.cpp"
+  "command": "C:\\TDM-GCC-64\\bin\\x86_64-w64-mingw32-g++.exe    -g   -o CMakeFiles\\Boom2.dir\\main2.cpp.obj -c C:\\Users\\Lior\\Desktop\\technion\\data_stract\\Boom2\\main2.cpp",
+  "file": "C:/Users/Lior/Desktop/technion/data_stract/Boom2/main2.cpp"
 },
 {
   "directory": "C:/Users/Lior/Desktop/technion/data_stract/Boom2/build",
