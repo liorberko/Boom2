@@ -21,7 +21,7 @@ class AVLnode
 };
 
 template <class T, class M>
-AVLnode<T,M>::AVLnode(T* info, M key): rank(1), info(info), key(key), balance(0), height(0), left_son(nullptr), right_son(nullptr), parent(nullptr) {}
+AVLnode<T,M>::AVLnode(T* info, M key): info(info), key(key), rank(1), balance(0), height(0), left_son(nullptr), right_son(nullptr), parent(nullptr) {}
 
 template <class T, class M>
 AVLnode<T,M>& AVLnode<T,M>::operator=(const AVLnode<T,M> target)
