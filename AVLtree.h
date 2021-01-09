@@ -84,6 +84,8 @@ void AVLtree<T,M>::postOrder(AVLnode<T,M> *target, void (*doSomething)(AVLnode<T
 template<class T, class M>
 AVLnode<T,M>* AVLtree<T,M>::findTheIRanke(int i)
 {
+    if(root == NULL) return nullptr;
+    i = (root->rank -i +1);
     AVLnode<T,M>* temp = root;
     while ((i > 0) && (temp != nullptr))
     {
@@ -107,7 +109,8 @@ AVLnode<T,M>* AVLtree<T,M>::findTheIRanke(int i)
         }
         else 
         {
-            if (temp->rank == i)
+            if (i == 1) // if there is no left son to temp, means temp is smallest vertex in the tree.
+                        //thus, if we wish to return the 1st (adjusted to function logic) lecture, we will return temp.
             {
                 return temp;
             }

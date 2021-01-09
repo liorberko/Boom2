@@ -125,15 +125,16 @@ void hashTable<T>::expand(){
         if(this->hash_array[i]!=NULL){
             hash_element<T>* current=hash_array[i];
             while(current!=NULL){
+                hash_element<T>* temp = current->next;
                 current->next = hash_new_array[hash_function(current->key)];//if the slot is thaken,
                 hash_new_array[hash_function(current->key)]=current;//then we'll insert current and
                 //attach to it its next in line, else we are putting NULL next in line so it doesnt matter.
-                current=current->next;      
+                current=temp;      
             }
         }
-        delete[](this->hash_array);
-        this->hash_array=hash_new_array;
     }
+    delete[](this->hash_array);
+    this->hash_array=hash_new_array;
 }
 
 template <class T>
@@ -149,15 +150,16 @@ void hashTable<T>::reduce()
         if(this->hash_array[i]!=NULL){
             hash_element<T>* current=hash_array[i];
             while(current!=NULL){
+                hash_element<T>* temp = current->next;
                 current->next = hash_new_array[hash_function(current->key)];//if the slot is thaken,
                 hash_new_array[hash_function(current->key)]=current;//then we'll insert current and
                 //attach to it its next in line, else we are putting NULL next in line so it doesnt matter.
-                current=current->next;         
+                current=temp;         
             }
         }
-        delete[](this->hash_array);
-        this->hash_array=hash_new_array;
     }
+    delete[](this->hash_array);
+    this->hash_array=hash_new_array;
 }
 
 template <class T>

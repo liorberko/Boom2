@@ -590,33 +590,6 @@ course.cpp.s:
 	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/course.cpp.s
 .PHONY : course.cpp.s
 
-hashTest.obj: hashTest.cpp.obj
-
-.PHONY : hashTest.obj
-
-# target to build an object file
-hashTest.cpp.obj:
-	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/hashTest.cpp.obj
-.PHONY : hashTest.cpp.obj
-
-hashTest.i: hashTest.cpp.i
-
-.PHONY : hashTest.i
-
-# target to preprocess a source file
-hashTest.cpp.i:
-	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/hashTest.cpp.i
-.PHONY : hashTest.cpp.i
-
-hashTest.s: hashTest.cpp.s
-
-.PHONY : hashTest.s
-
-# target to generate assembly for a file
-hashTest.cpp.s:
-	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/hashTest.cpp.s
-.PHONY : hashTest.cpp.s
-
 lecture.obj: lecture.cpp.obj
 
 .PHONY : lecture.obj
@@ -698,6 +671,33 @@ library2.cpp.s:
 	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/library2.cpp.s
 .PHONY : library2.cpp.s
 
+main2.obj: main2.cpp.obj
+
+.PHONY : main2.obj
+
+# target to build an object file
+main2.cpp.obj:
+	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/main2.cpp.obj
+.PHONY : main2.cpp.obj
+
+main2.i: main2.cpp.i
+
+.PHONY : main2.i
+
+# target to preprocess a source file
+main2.cpp.i:
+	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/main2.cpp.i
+.PHONY : main2.cpp.i
+
+main2.s: main2.cpp.s
+
+.PHONY : main2.s
+
+# target to generate assembly for a file
+main2.cpp.s:
+	$(MAKE) -f CMakeFiles\Boom2.dir\build.make CMakeFiles/Boom2.dir/main2.cpp.s
+.PHONY : main2.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -744,9 +744,6 @@ help:
 	@echo ... course.obj
 	@echo ... course.i
 	@echo ... course.s
-	@echo ... hashTest.obj
-	@echo ... hashTest.i
-	@echo ... hashTest.s
 	@echo ... lecture.obj
 	@echo ... lecture.i
 	@echo ... lecture.s
@@ -756,6 +753,9 @@ help:
 	@echo ... library2.obj
 	@echo ... library2.i
 	@echo ... library2.s
+	@echo ... main2.obj
+	@echo ... main2.i
+	@echo ... main2.s
 .PHONY : help
 
 

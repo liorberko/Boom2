@@ -4,9 +4,10 @@
 
 
 int course::addLecture(){
-    int new_lecture_ID= num_of_lectures+1;
+    int new_lecture_ID= num_of_lectures;
     lecture* new_lecture = new lecture(new_lecture_ID, courseID,0);
     lectures.insert(new_lecture,new_lecture_ID);
+    num_of_lectures++;
     return new_lecture_ID;
 }
 
@@ -46,5 +47,5 @@ course::~course()
     {
         delete (lectures.find(i));
     }
-    delete(&lectures);
+    // delete(&lectures);
 }

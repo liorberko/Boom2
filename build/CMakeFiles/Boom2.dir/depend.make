@@ -19,9 +19,6 @@ CMakeFiles/Boom2.dir/course.cpp.obj: ../hashTable.h
 CMakeFiles/Boom2.dir/course.cpp.obj: ../lecture.h
 CMakeFiles/Boom2.dir/course.cpp.obj: ../lectureKey.h
 
-CMakeFiles/Boom2.dir/hashTest.cpp.obj: ../hashTable.h
-CMakeFiles/Boom2.dir/hashTest.cpp.obj: ../hashTest.cpp
-
 CMakeFiles/Boom2.dir/lecture.cpp.obj: ../AVLnode.h
 CMakeFiles/Boom2.dir/lecture.cpp.obj: ../AVLtree.h
 CMakeFiles/Boom2.dir/lecture.cpp.obj: ../lecture.cpp
@@ -41,4 +38,7 @@ CMakeFiles/Boom2.dir/library2.cpp.obj: ../lecture.h
 CMakeFiles/Boom2.dir/library2.cpp.obj: ../lectureKey.h
 CMakeFiles/Boom2.dir/library2.cpp.obj: ../library2.cpp
 CMakeFiles/Boom2.dir/library2.cpp.obj: ../library2.h
+
+CMakeFiles/Boom2.dir/main2.cpp.obj: ../library2.h
+CMakeFiles/Boom2.dir/main2.cpp.obj: ../main2.cpp
 
