@@ -73,18 +73,18 @@ include CMakeFiles/Boom2.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Boom2.dir/flags.make
 
-CMakeFiles/Boom2.dir/main2.cpp.obj: CMakeFiles/Boom2.dir/flags.make
-CMakeFiles/Boom2.dir/main2.cpp.obj: ../main2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Lior\Desktop\technion\data_stract\Boom2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Boom2.dir/main2.cpp.obj"
-	C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Boom2.dir\main2.cpp.obj -c C:\Users\Lior\Desktop\technion\data_stract\Boom2\main2.cpp
+CMakeFiles/Boom2.dir/TimeCheck.cpp.obj: CMakeFiles/Boom2.dir/flags.make
+CMakeFiles/Boom2.dir/TimeCheck.cpp.obj: ../TimeCheck.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Lior\Desktop\technion\data_stract\Boom2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Boom2.dir/TimeCheck.cpp.obj"
+	C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Boom2.dir\TimeCheck.cpp.obj -c C:\Users\Lior\Desktop\technion\data_stract\Boom2\TimeCheck.cpp
 
-CMakeFiles/Boom2.dir/main2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Boom2.dir/main2.cpp.i"
-	C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Lior\Desktop\technion\data_stract\Boom2\main2.cpp > CMakeFiles\Boom2.dir\main2.cpp.i
+CMakeFiles/Boom2.dir/TimeCheck.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Boom2.dir/TimeCheck.cpp.i"
+	C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Lior\Desktop\technion\data_stract\Boom2\TimeCheck.cpp > CMakeFiles\Boom2.dir\TimeCheck.cpp.i
 
-CMakeFiles/Boom2.dir/main2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Boom2.dir/main2.cpp.s"
-	C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Lior\Desktop\technion\data_stract\Boom2\main2.cpp -o CMakeFiles\Boom2.dir\main2.cpp.s
+CMakeFiles/Boom2.dir/TimeCheck.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Boom2.dir/TimeCheck.cpp.s"
+	C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Lior\Desktop\technion\data_stract\Boom2\TimeCheck.cpp -o CMakeFiles\Boom2.dir\TimeCheck.cpp.s
 
 CMakeFiles/Boom2.dir/lecture.cpp.obj: CMakeFiles/Boom2.dir/flags.make
 CMakeFiles/Boom2.dir/lecture.cpp.obj: ../lecture.cpp
@@ -153,7 +153,7 @@ CMakeFiles/Boom2.dir/library2.cpp.s: cmake_force
 
 # Object files for target Boom2
 Boom2_OBJECTS = \
-"CMakeFiles/Boom2.dir/main2.cpp.obj" \
+"CMakeFiles/Boom2.dir/TimeCheck.cpp.obj" \
 "CMakeFiles/Boom2.dir/lecture.cpp.obj" \
 "CMakeFiles/Boom2.dir/lectureKey.cpp.obj" \
 "CMakeFiles/Boom2.dir/course.cpp.obj" \
@@ -163,7 +163,7 @@ Boom2_OBJECTS = \
 # External object files for target Boom2
 Boom2_EXTERNAL_OBJECTS =
 
-Boom2.exe: CMakeFiles/Boom2.dir/main2.cpp.obj
+Boom2.exe: CMakeFiles/Boom2.dir/TimeCheck.cpp.obj
 Boom2.exe: CMakeFiles/Boom2.dir/lecture.cpp.obj
 Boom2.exe: CMakeFiles/Boom2.dir/lectureKey.cpp.obj
 Boom2.exe: CMakeFiles/Boom2.dir/course.cpp.obj

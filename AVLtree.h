@@ -361,6 +361,7 @@ void AVLtree<T,M>::fix_rank_after_remove(AVLnode<T,M> *ver_to_remove)
 template <class T, class M>
 void AVLtree<T,M>::removeVertex(AVLnode<T,M> *ver_to_remove)
 {
+    if (ver_to_remove == NULL) return;
     if(ver_to_remove->parent==nullptr && ver_to_remove->right_son==nullptr && ver_to_remove->left_son==nullptr){
         if (ver_to_remove == root)
         {
