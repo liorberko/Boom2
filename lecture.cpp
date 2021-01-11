@@ -5,11 +5,11 @@ bool lecture::operator<(const lecture target) const
     if(key.viewTime < target.key.viewTime){
         return true;
     }
-    if (key.viewTime == target.key.viewTime && key.lectureID > target.key.lectureID)
+    if ((key.viewTime == target.key.viewTime) && (key.courseID > target.key.courseID))
     {
         return true;
     }
-    else if (key.viewTime == target.key.viewTime && key.lectureID==target.key.lectureID && key.courseID > target.key.courseID){
+    else if ((key.viewTime == target.key.viewTime) && (key.courseID==target.key.courseID) && (key.lectureID > target.key.lectureID)){
         return true;
     }
     return false;
@@ -19,11 +19,11 @@ bool lecture::operator>(const lecture target) const
     if(key.viewTime > target.key.viewTime){
         return true;
     }
-    if (key.viewTime == target.key.viewTime && key.lectureID < target.key.lectureID)
+    if ((key.viewTime == target.key.viewTime) && (key.courseID < target.key.courseID))
     {
         return true;
     }
-    else if (key.viewTime == target.key.viewTime && key.lectureID==target.key.lectureID && key.courseID < target.key.courseID){
+    else if ((key.viewTime == target.key.viewTime) && (key.courseID==target.key.courseID) && (key.lectureID < target.key.lectureID)){
         return true;
     }
     return false;
