@@ -1,12 +1,12 @@
 #ifndef EXCEPTIONS_H_
 #define EXCEPTIONS_H_
 #include <string>
-class BoomExceptions : public std::exception
+class BoomExceptions
 {
 public:
   std::string error_name;
   BoomExceptions(std::string description) : error_name(description) {};
-  std::string what()
+  std::string what() const
   {
     return error_name;
   };

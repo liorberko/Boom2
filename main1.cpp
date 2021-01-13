@@ -3,6 +3,7 @@
 // #include "AVLnode.h"
 // #include "lecture.h"
 // #include "lectureKey.h"
+// #include "exceptions.h"
 // #include "hashTable.h"
 // #include "boom.h"
 // #include <iostream>
@@ -16,7 +17,17 @@
 //         test.AddCourse(111);
 //         std::cout << "Succes" << std::endl;
 //     }
-//     catch(const std::exception& e)
+//     catch(const BoomExceptions& e)
+//     {
+//         std::cerr << e.what() << '\n';
+//     }
+//      try
+//     {
+//         std::cout << "Add class 111 : expected FAILURE exception";
+//         test.AddCourse(111);
+//         std::cout << "Succes" << std::endl;
+//     }
+//     catch(const BoomExceptions& e)
 //     {
 //         std::cerr << e.what() << '\n';
 //     }
@@ -26,7 +37,7 @@
 //         test.AddCourse(222);
 //         std::cout << "Succes" << std::endl;
 //     }
-//     catch(const std::exception& e)
+//     catch(const BoomExceptions& e)
 //     {
 //         std::cerr << e.what() << '\n';
 //     }
@@ -36,7 +47,7 @@
 //         test.AddCourse(333);
 //         std::cout << "Succes" << std::endl;
 //     }
-//     catch(const std::exception& e)
+//     catch(const BoomExceptions& e)
 //     {
 //         std::cerr << e.what() << '\n';
 //     }
@@ -46,7 +57,7 @@
 //         test.AddCourse(444);
 //         std::cout << "Succes" << std::endl;
 //     }
-//     catch(const std::exception& e)
+//     catch(const BoomExceptions& e)
 //     {
 //         std::cerr << e.what() << '\n';
 //     }
@@ -56,7 +67,7 @@
 //         test.AddCourse(555);
 //         std::cout << "Succes" << std::endl;
 //     }
-//     catch(const std::exception& e)
+//     catch(const BoomExceptions& e)
 //     {
 //         std::cerr << e.what() << '\n';
 //     }
@@ -66,7 +77,7 @@
 //         test.AddCourse(555);
 //         std::cout << "Succes" << std::endl;
 //     }
-//     catch(const std::exception& e)
+//     catch(const BoomExceptions& e)
 //     {
 //         std::cout << e.what() << '\n';
 //     }
@@ -76,7 +87,7 @@
 //         test.RemoveCourse(555);
 //         std::cout << "Succes" << std::endl;
 //     }
-//     catch(const std::exception& e)
+//     catch(const BoomExceptions& e)
 //     {
 //         std::cerr << e.what() << '\n';
 //     }
@@ -86,7 +97,7 @@
 //         test.AddClass(111);
 //         std::cout << "Succes" << std::endl;
 //     }
-//     catch(const std::exception& e)
+//     catch(const BoomExceptions& e)
 //     {
 //         std::cerr << e.what() << '\n';
 //     }
@@ -96,7 +107,7 @@
 //         test.AddClass(111);
 //         std::cout << "Succes" << std::endl;
 //     }
-//     catch(const std::exception& e)
+//     catch(const BoomExceptions& e)
 //     {
 //         std::cerr << e.what() << '\n';
 //     }
@@ -106,7 +117,7 @@
 //         test.AddClass(111);
 //         std::cout << "Succes" << std::endl;
 //     }
-//     catch(const std::exception& e)
+//     catch(const BoomExceptions& e)
 //     {
 //         std::cerr << e.what() << '\n';
 //     }
@@ -116,7 +127,7 @@
 //         test.AddClass(222);
 //         std::cout << "Succes" << std::endl;
 //     }
-//     catch(const std::exception& e)
+//     catch(const BoomExceptions& e)
 //     {
 //         std::cerr << e.what() << '\n';
 //     }
@@ -126,7 +137,7 @@
 //         test.AddClass(333);
 //         std::cout << "Succes" << std::endl;
 //     }
-//     catch(const std::exception& e)
+//     catch(const BoomExceptions& e)
 //     {
 //         std::cerr << e.what() << '\n';
 //     }
@@ -136,7 +147,7 @@
 //         test.WatchClass(111, 1 , 1);
 //         std::cout <<test.TimeViewed(111,1) <<std::endl;
 //     }
-//     catch(const std::exception& e)
+//     catch(const BoomExceptions& e)
 //     {
 //         std::cerr << e.what() << '\n';
 //     }
@@ -146,7 +157,7 @@
 //         test.WatchClass(222, 0 , 2);
 //         std::cout << test.TimeViewed(222,0) << std::endl;
 //     }
-//     catch(const std::exception& e)
+//     catch(const BoomExceptions& e)
 //     {
 //         std::cerr << e.what() << '\n';
 //     }
@@ -156,7 +167,7 @@
 //         test.WatchClass(333, 0 , 3);
 //         std::cout << test.TimeViewed(333,0) << std::endl;
 //     }
-//     catch(const std::exception& e)
+//     catch(const BoomExceptions& e)
 //     {
 //         std::cerr << e.what() << '\n';
 //     }
@@ -166,7 +177,7 @@
 //         test.WatchClass(444, 0 , 4);
 //         std::cout << test.TimeViewed(444,0) << std::endl;
 //     }
-//     catch(const std::exception& e)
+//     catch(const BoomExceptions& e)
 //     {
 //         std::cerr << e.what() << '\n';
 //     }
@@ -175,7 +186,7 @@
 //         std::cout << "the srconde watched class is : ";
 //         std::cout << *(test.GetIthWatchedClass(3)) << std::endl;
 //     }
-//     catch(const std::exception& e)
+//     catch(const BoomExceptions& e)
 //     {
 //         std::cerr << e.what() << '\n';
 //     }
