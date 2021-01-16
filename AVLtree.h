@@ -84,7 +84,7 @@ void AVLtree<T,M>::postOrder(AVLnode<T,M> *target, void (*doSomething)(AVLnode<T
 template<class T, class M>
 AVLnode<T,M>* AVLtree<T,M>::findTheIRanke(int i)
 {
-    if(root == NULL) return nullptr;
+    if(root == NULL) return NULL;
     i = (root->rank -i +1);
     AVLnode<T,M>* temp = root;
     while ((i > 0) && (temp != nullptr))
@@ -297,7 +297,14 @@ int AVLtree<T,M>::setHeight(AVLnode<T,M> *vertex){
     {
         return (vertex->left_son->height +1);
     }
-    return 1+std::max(vertex->left_son->height, vertex->right_son->height);
+    if ((vertex->left_son->height) > (vertex->right_son->height))
+    {
+        return vertex->left_son->height;
+    }
+    else
+    {
+        return vertex->right_son->height ;
+    }
 }
 
 template <class T, class M>
@@ -472,19 +479,26 @@ void AVLtree<T,M>::removeVertex(AVLnode<T,M> *ver_to_remove)
         {
             temp1->left_son->parent = temp1;
         }
-        to_fix = temp1->parent;
+        if (temp1->parent == ver_to_remove)
+        {
+            to_fix = temp1;
+        }
+        else
+        {
+            to_fix = temp1->parent;
+        }
         if (root == ver_to_remove)
         {
             root = temp1;
             temp1->parent = nullptr;
-            if (temp1->right_son != nullptr)
-            {
-                to_fix = temp1->right_son;
-            }
-            else
-            {
-                to_fix = temp1;
-            }
+            // if (temp1->right_son != nullptr)
+            // {
+            //     to_fix = temp1->right_son;
+            // }
+            // else
+            // {
+            //     to_fix = temp1;
+            // }
         }
         else
         {
@@ -499,6 +513,7 @@ void AVLtree<T,M>::removeVertex(AVLnode<T,M> *ver_to_remove)
             }
         }
     }
+    delete(ver_to_remove);
     AVLnode<T,M> *to_fix_balance = to_fix;
     while(to_fix_balance != NULL)
     {
@@ -511,7 +526,6 @@ void AVLtree<T,M>::removeVertex(AVLnode<T,M> *ver_to_remove)
         rebalance(to_fix);
         to_fix = to_fix->parent;
     }
-    delete(ver_to_remove);
 }
 
 template <class T, class M>

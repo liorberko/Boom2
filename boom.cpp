@@ -56,8 +56,8 @@ void boom::WatchClass(int courseID, int classID, int time)
     }
     else
     {
-        the_lec->getViewTime() += time;
         avl_lectures.removeVertex(avl_lectures.find(the_lec->key));
+        the_lec->getViewTime() += time;
         avl_lectures.addVertex(the_lec,the_lec->key);
     }
 }
